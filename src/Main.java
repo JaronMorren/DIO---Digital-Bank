@@ -2,17 +2,17 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Cliente venilton = new Cliente();
-		venilton.setNome("Venilton");
+		Client JohnDoe = new Client();
+		JohnDoe.setName("John Doe");
 		
-		Conta cc = new ContaCorrente(venilton);
-		Conta poupanca = new ContaPoupanca(venilton);
+		Account currentAccount = new CurrentAccount(JohnDoe);
+		Account savingsAccount = new SavingsAccount(JohnDoe);
 
-		cc.depositar(100);
-		cc.transferir(100, poupanca);
+		currentAccount.deposit(500);
+		currentAccount.transfer(500, savingsAccount);
 		
-		cc.imprimirExtrato();
-		poupanca.imprimirExtrato();
+		currentAccount.printExtract();
+		savingsAccount.printExtract();
 	}
 
 }
